@@ -58,18 +58,97 @@
       initReveal(true);
     }
 
-    document.querySelectorAll("[data-lang]").forEach(btn=>btn.addEventListener("click",()=>applyLanguage(btn.dataset.lang)));
+const menuBtn = document.querySelector(".menu-btn");
+const mobilePanel = document.querySelector(".mobile-panel");
 
-    const menuBtn = document.querySelector(".menu-btn");
-    const mobilePanel = document.querySelector(".mobile-panel");
-    menuBtn.addEventListener("click",()=>{
-      const open = mobilePanel.classList.toggle("open");
-      menuBtn.setAttribute("aria-expanded", String(open));
-    });
-    mobilePanel.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
-      mobilePanel.classList.remove("open");
-      menuBtn.setAttribute("aria-expanded", "false");
-    }));
+let menuOpenedAtY = window.scrollY;
+let ignoreScrollUntil = 0;
+
+function isMobileMenuOpen(){
+  return mobilePanel && mobilePanel.classList.contains("open");
+}
+
+function openMobileMenu(){
+  if(!mobilePanel || !menuBtn) return;
+
+  mobilePanel.classList.add("open");
+  menuBtn.setAttribute("aria-expanded", "true");
+
+  // Remember where the user was when the menu opened.
+  menuOpenedAtY = window.scrollY;
+
+  // Prevent instant close caused by tiny layout/browser scroll events.
+  ignoreScrollUntil = Date.now() + 250;
+}
+
+function closeMobileMenu(){
+  if(!mobilePanel || !menuBtn) return;
+  if(!isMobileMenuOpen()) return;
+
+  mobilePanel.classList.remove("open");
+  menuBtn.setAttribute("aria-expanded", "false");
+}
+
+function toggleMobileMenu(){
+  if(isMobileMenuOpen()){
+    closeMobileMenu();
+  }else{
+    openMobileMenu();
+  }
+}
+
+// Language buttons
+document.querySelectorAll("[data-lang]").forEach((btn)=>{
+  btn.addEventListener("click", ()=>{
+    applyLanguage(btn.dataset.lang);
+
+    // If language was selected from the mobile menu, close the menu.
+    if(btn.closest(".mobile-panel")){
+      closeMobileMenu();
+    }
+  });
+});
+
+// Menu button
+if(menuBtn && mobilePanel){
+  menuBtn.addEventListener("click", (event)=>{
+    event.stopPropagation();
+    toggleMobileMenu();
+  });
+
+  // Close mobile menu when clicking navigation links.
+  mobilePanel.querySelectorAll("a").forEach((link)=>{
+    link.addEventListener("click", closeMobileMenu);
+  });
+
+  // Close menu when the user actually scrolls away from the opening position.
+  window.addEventListener("scroll", ()=>{
+    if(!isMobileMenuOpen()) return;
+    if(Date.now() < ignoreScrollUntil) return;
+
+    const scrollDistance = Math.abs(window.scrollY - menuOpenedAtY);
+
+    if(scrollDistance > 8){
+      closeMobileMenu();
+    }
+  }, { passive:true });
+
+  // Desktop/laptop wheel scroll.
+  window.addEventListener("wheel", ()=>{
+    if(!isMobileMenuOpen()) return;
+    if(Date.now() < ignoreScrollUntil) return;
+
+    closeMobileMenu();
+  }, { passive:true });
+
+  // Mobile finger scroll.
+  window.addEventListener("touchmove", ()=>{
+    if(!isMobileMenuOpen()) return;
+    if(Date.now() < ignoreScrollUntil) return;
+
+    closeMobileMenu();
+  }, { passive:true });
+}
 
     let revealObserver;
     function initReveal(reconnect=false){
