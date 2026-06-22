@@ -30,7 +30,7 @@ const text = {
     "services.intro": "تجمع تاور بترول خدماتها ضمن مجالات واضحة، لمساعدة العملاء على الوصول إلى الدعم المناسب في مشاريع النفط، الإنشاءات، خطوط الأنابيب، المياه، والمعدات الثقيلة.",
 "gallery.kicker":"معرض الأعمال الميدانية",
 "gallery.title":"نظرة على أعمالنا في مواقع العمل",
-"gallery.intro":"تعرف على جانب من أعمال تاور بترول الميدانية، بما يشمل المعدات الثقيلة، دعم أعمال الحفر، خطوط الأنابيب، أعمال الحفر والتجهيز، والآليات المستخدمة في مواقع المشاريع المختلفة.",
+"gallery.intro":"تعرف على جانب من أعمال تاور بترول الميدانية، بما يشمل المعدات الثقيلة، دعم أعمال الحفر، خطوط الأنابيب، أعمال النقل، والآليات المستخدمة في مواقع المشاريع المختلفة.",
     "contact.title": "تواصل مع تاور بترول", "contact.text": "للاستفسار عن الخدمات، مناقشة مشروع، طلب معدات، أو معرفة إمكانية تنفيذ عمل ميداني معين، يمكنكم التواصل مباشرة.",
     "contact.whatsapp": "ناقش مشروعك عبر واتساب", "contact.call": "اتصل الآن", "contact.emailButton": "أرسل بريدًا إلكترونيًا", "contact.phoneLabel": "الهاتف والواتساب", "contact.emailLabel": "البريد الإلكتروني", "contact.locationLabel": "الموقع", "contact.location": "أربيل، العراق",
     "footer.copy": "© تاور بترول. جميع الحقوق محفوظة."
@@ -51,8 +51,8 @@ const text = {
     "services.intro": "تاور پێترول خزمەتگوزارییەکانی لە چەند بوارێکی ڕووندا ڕێکدەخات، بۆ ئەوەی کڕیاران بە ئاسانی پاڵپشتی گونجاو بۆ پڕۆژەکانی نەوت، بیناسازی، بۆری، ئاو، و ئامێری قورس بدۆزنەوە.", 
 "gallery.kicker":"گەلەری کاری مەیدانی",
 "gallery.title":"نیگایەک بۆ کارەکانمان لە مەیدان",
-"gallery.intro":"نمونەیەک لە کارە مەیدانییەکانی تاور پێترول ببینە، وەک ئامێری قورس، پاڵپشتی کاری هەڵکەندن، کاری بۆری، ئامادەکردنی شوێنی پڕۆژە، و ئامێرە بەکارهاتووەکان لە شوێنە جیاوازەکان.",
-    "contact.title": "پەیوەندی بە تاوەر پێترۆل بکە", "contact.text": "بۆ پرسیار لەسەر خزمەتگوزاری، تاوتوێکردنی پڕۆژە، داواکردنی ئامێر، یان زانیاری لەسەر ئەنجامدانی کارێکی مەیدانی، ڕاستەوخۆ پەیوەندی بە تاوەر پێترۆل بکە.",
+"gallery.intro":"نمونەیەک لە کارە مەیدانییەکانی تاوەر پێترۆل ببینە، وەک ئامێری قورس، پاڵپشتی کاری هەڵکەندن کاری بۆری، گواستنەوەی ئامێر، و ئامێرە بەکارهاتووەکان لە شوێنە جیاوازەکان.", 
+   "contact.title": "پەیوەندی بە تاوەر پێترۆل بکە", "contact.text": "بۆ پرسیار لەسەر خزمەتگوزاری، تاوتوێکردنی پڕۆژە، داواکردنی ئامێر، یان زانیاری لەسەر ئەنجامدانی کارێکی مەیدانی، ڕاستەوخۆ پەیوەندی بە تاوەر پێترۆل بکە.",
     "contact.whatsapp": "پڕۆژەکەت لە واتساپ تاوتوێ بکە", "contact.call": "ئێستا پەیوەندی بکە", "contact.emailButton": "ئیمەیڵ بنێرە", "contact.phoneLabel": "تەلەفۆن و واتساپ", "contact.emailLabel": "ئیمەیڵ", "contact.locationLabel": "شوێن", "contact.location": "هەولێر، عێراق",
     "footer.copy": "© تاوەر پێترۆل. هەموو مافەکان پارێزراون."
   },
@@ -72,7 +72,7 @@ const text = {
     "services.intro": "Tower Petrol groups its services into clear areas, helping clients find the right support for oilfield, construction, pipeline, water, and heavy equipment needs.", 
 "gallery.kicker":"Field Work Gallery",
 "gallery.title":"A look at our work in the field",
-"gallery.intro":"Explore examples of Tower Petrol’s field operations, heavy equipment, drilling support, pipeline work, excavation, and machinery used across different project sites.",
+"gallery.intro":"Explore examples of Tower Petrol’s field operations, including heavy equipment, drilling support, pipeline work, transportation work, and machinery used across different project sites.",
     "contact.title": "Contact Tower Petrol", "contact.text": "For service inquiries, project discussions, equipment requests, or questions about possible field work, contact Tower Petrol directly.",
     "contact.whatsapp": "Discuss Your Project on WhatsApp", "contact.call": "Call Now", "contact.emailButton": "Send Email", "contact.phoneLabel": "Phone and WhatsApp", "contact.emailLabel": "Email", "contact.locationLabel": "Location", "contact.location": "Erbil, Iraq",
     "footer.copy": "© Tower Petrol. All rights reserved."
@@ -101,28 +101,52 @@ const services = {
 };
 
 const gallery = {
-  ar: [
-    { img: "gallery-rig.webp", label: "أبراج ومعدات الحفر", cls: "tall" },
-    { img: "gallery-drill-pipes.webp", label: "أنابيب ومعدات ميدانية", cls: "" },
-    { img: "gallery-pipeline.webp", label: "أعمال خطوط الأنابيب", cls: "wide" },
-    { img: "gallery-earthworks.webp", label: "الحفر وتجهيز المواقع", cls: "" },
-    { img: "gallery-hydraulic-breaker.webp", label: "تكسير الصخور بالمطرقة الهيدروليكية", cls: "" },
-    { img: "gallery-rig-components.webp", label: "مكونات ومعدات صناعية", cls: "" }
+  ar:[
+    {img:"gallery-rig.webp", label:"أبراج ومعدات الحفر", cls:"tall"},
+    {img:"gallery-drill-pipes.webp", label:"أنابيب ومعدات ميدانية", cls:""},
+    {img:"gallery-pipeline.webp", label:"أعمال خطوط الأنابيب", cls:"wide"},
+    {img:"gallery-earthworks.webp", label:"الحفر وتجهيز المواقع", cls:""},
+    {img:"gallery-hydraulic-breaker.webp", label:"تكسير الصخور بالمطرقة الهيدروليكية", cls:""},
+    {img:"gallery-rig-components.webp", label:"مكونات ومعدات صناعية", cls:""},
+
+    {img:"gallery-pipe-bundles-warehouse.webp", label:"أنابيب ومواد صناعية مخزنة", cls:"tall"},
+    {img:"gallery-industrial-engine-units.webp", label:"معدات صناعية ثقيلة", cls:"wide"},
+    {img:"gallery-heavy-equipment-transport.webp", label:"نقل المعدات الثقيلة", cls:"wide"},
+    {img:"gallery-steel-pipes-storage.webp", label:"تخزين الأنابيب والمواد الميدانية", cls:""},
+    {img:"gallery-industrial-power-unit.webp", label:"معدات صناعية لدعم المشاريع", cls:"wide"},
+    {img:"gallery-rig-frame-yard.webp", label:"هياكل ومعدات الحفر في الموقع", cls:"tall"},
+    {img:"gallery-rig-carrier-equipment.webp", label:"معدات حفر ونقل ميداني", cls:"wide"}
   ],
-  ku: [
-    { img: "gallery-rig.webp", label: "بورج و ئامێری هەڵکەندن", cls: "tall" },
-    { img: "gallery-drill-pipes.webp", label: "بۆری و کەرەستەی مەیدانی", cls: "" },
-    { img: "gallery-pipeline.webp", label: "کاری هێڵی بۆری", cls: "wide" },
-    { img: "gallery-earthworks.webp", label: "هەڵکەندن و ئامادەکردنی شوێن", cls: "" },
-    { img: "gallery-hydraulic-breaker.webp", label: "شکاندنی بەرد بە مەتەقەی هایدرۆلیک", cls: "" },
-    { img: "gallery-rig-components.webp", label: "پارچە و ئامێری پیشەسازی", cls: "" }
+  ku:[
+    {img:"gallery-rig.webp", label:"بورج و ئامێری هەڵکەندن", cls:"tall"},
+    {img:"gallery-drill-pipes.webp", label:"بۆری و کەرەستەی مەیدانی", cls:""},
+    {img:"gallery-pipeline.webp", label:"کاری هێڵی بۆری", cls:"wide"},
+    {img:"gallery-earthworks.webp", label:"هەڵکەندن و ئامادەکردنی شوێن", cls:""},
+    {img:"gallery-hydraulic-breaker.webp", label:"شکاندنی بەرد بە مەتەقەی هایدرۆلیک", cls:""},
+    {img:"gallery-rig-components.webp", label:"پارچە و ئامێری پیشەسازی", cls:""},
+
+    {img:"gallery-pipe-bundles-warehouse.webp", label:"بۆری و کەرەستەی پیشەسازی لە کۆگا", cls:"tall"},
+    {img:"gallery-industrial-engine-units.webp", label:"ئامێری پیشەسازی قورس", cls:"wide"},
+    {img:"gallery-heavy-equipment-transport.webp", label:"گواستنەوەی ئامێری قورس", cls:"wide"},
+    {img:"gallery-steel-pipes-storage.webp", label:"کۆگاکردنی بۆری و کەرەستەی مەیدانی", cls:""},
+    {img:"gallery-industrial-power-unit.webp", label:"ئامێری پیشەسازی بۆ پشتیوانی پڕۆژە", cls:"wide"},
+    {img:"gallery-rig-frame-yard.webp", label:"چوارچێوە و ئامێری ‌هەڵکەندن لە شوێن", cls:"tall"},
+    {img:"gallery-rig-carrier-equipment.webp", label:"ئامێری هەڵکەندن و گواستنەوەی مەیدانی", cls:"wide"}
   ],
-  en: [
-    { img: "gallery-rig.webp", label: "Drilling rigs and equipment", cls: "tall" },
-    { img: "gallery-drill-pipes.webp", label: "Pipes and field materials", cls: "" },
-    { img: "gallery-pipeline.webp", label: "Pipeline field work", cls: "wide" },
-    { img: "gallery-earthworks.webp", label: "Excavation and site work", cls: "" },
-    { img: "gallery-hydraulic-breaker.webp", label: "Hydraulic rock breaking", cls: "" },
-    { img: "gallery-rig-components.webp", label: "Industrial rig components", cls: "" }
+  en:[
+    {img:"gallery-rig.webp", label:"Drilling rigs and equipment", cls:"tall"},
+    {img:"gallery-drill-pipes.webp", label:"Pipes and field materials", cls:""},
+    {img:"gallery-pipeline.webp", label:"Pipeline field work", cls:"wide"},
+    {img:"gallery-earthworks.webp", label:"Excavation and site work", cls:""},
+    {img:"gallery-hydraulic-breaker.webp", label:"Hydraulic rock breaking", cls:""},
+    {img:"gallery-rig-components.webp", label:"Industrial rig components", cls:""},
+
+    {img:"gallery-pipe-bundles-warehouse.webp", label:"Stored pipes and industrial materials", cls:"tall"},
+    {img:"gallery-industrial-engine-units.webp", label:"Heavy industrial machinery", cls:"wide"},
+    {img:"gallery-heavy-equipment-transport.webp", label:"Heavy equipment transportation", cls:"wide"},
+    {img:"gallery-steel-pipes-storage.webp", label:"Pipe and field material storage", cls:""},
+    {img:"gallery-industrial-power-unit.webp", label:"Industrial equipment for project support", cls:"wide"},
+    {img:"gallery-rig-frame-yard.webp", label:"Rig frames and field equipment", cls:"tall"},
+    {img:"gallery-rig-carrier-equipment.webp", label:"Rig carrier and field equipment", cls:"wide"}
   ]
 };
